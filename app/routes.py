@@ -14,8 +14,9 @@ import plotly.express as px
 @app.route('/index')
 @login_required # remove to remove user login requirement
 def index():
-    f = codecs.open("project-evelyn.html", 'r')
-    return f.read()
+    f = codecs.open("project-income.html", 'r')
+    return render_template('project-income.html')
+    #return f.read()
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -63,7 +64,7 @@ def project():
     # displaying it this way should make it understanble as to how
     # you could load this "record" from the database
     kwargs = {
-        "title": "US Adult Income Data Analysis By Evelyn",
+        "title": "US Adult Income Data Analysis",
         "overview": "This data was extracted from the U.S Census bureau database by Ronny Kohavi and Barry Becker (Data Mining and Visualization, Silicon Graphics). The goal of this project is to show some feature table and distribution graphs in the dataset.",
         "distribution": {
             "text": "Figure 1 shows the histogram distribution of education in the dataset, the observation appears the most density peak appears at the 9, which is high school graduation. The second peak appears at 10. The last rise seems at 13, which means after high school graduation, most working people decided to go to college and have some years of college education or a bachelor's degree.",

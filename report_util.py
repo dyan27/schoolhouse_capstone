@@ -313,7 +313,7 @@ class HTMLReportContext(ReportContext):
         html_file.write("<a name='top' class='part_anchor'></a>")
         html_file.write("<div class='report'>")
         html_file.write("<div class='header'>")
-        html_file.write("<img src='logo.png' class='logo'/><h1>{}</h1>".format(html.escape(report.title)))
+        html_file.write("<img src='static/img/logo.png' class='logo'/><h1>{}</h1>".format(html.escape(report.title)))
         html_file.write("</div>")
         html_file.write("<div class='content'>")
         for section in report.sections:
